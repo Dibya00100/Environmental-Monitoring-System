@@ -6,7 +6,7 @@ services:
     startCommand: node server.js
     envVars:
       - key: MONGODB_URI
-        value: mongodb+srv://asusdibyajyoti:M4-QF-jANcwtzNP@cluster0.6isyaus.mongodb.net/environmental_monitoring?retryWrites=true&w=majority
+        value: mongodb+srv://asusdibyajyoti:IXX521O6tnFKjhQn@cluster0.pcyxjan.mongodb.net/environmental_monitoring?retryWrites=true&w=majority
       - key: NODE_ENV
         value: production
       - key: PORT
