@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/environmental_monitoring';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://asusdibyajyoti:<db_password>@cluster0.6isyaus.mongodb.net/environmental_monitoring?retryWrites=true&w=majority';
 
 // Ensure the connection string starts with mongodb:// or mongodb+srv://
 if (!MONGODB_URI.startsWith('mongodb://') && !MONGODB_URI.startsWith('mongodb+srv://')) {
@@ -38,7 +38,7 @@ mongoose.connect(MONGODB_URI, {
     useUnifiedTopology: true
 })
     .then(() => {
-        console.log('Connected to MongoDB');
+        console.log('Connected to MongoDB Atlas');
         // Start the server only after MongoDB connection is established
         app.listen(PORT, '0.0.0.0', () => {
             console.log('\n=== Server Started ===');
