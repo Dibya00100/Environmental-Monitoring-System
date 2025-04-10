@@ -26,7 +26,17 @@ app.use((req, res, next) => {
 
 // MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/environmental_monitoring';
-mongoose.connect(MONGODB_URI)
+
+// Ensure the connection string starts with mongodb:// or mongodb+srv://
+if (!MONGODB_URI.startsWith('mongodb://') && !MONGODB_URI.startsWith('mongodb+srv://')) {
+    console.error('Invalid MongoDB connection string. Must start with mongodb:// or mongodb+srv://');
+    process.exit(1);
+}
+
+mongoose.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
     .then(() => {
         console.log('Connected to MongoDB');
         // Start the server only after MongoDB connection is established
