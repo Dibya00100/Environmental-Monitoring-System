@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: environmental-monitoring
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        fromDatabase:
+          name: environmental-monitoring-db
+          property: connectionString
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+databases:
+  - name: environmental-monitoring-db
+    databaseName: environmental_monitoring
+    user: environmental_monitoring_user
+    plan: free

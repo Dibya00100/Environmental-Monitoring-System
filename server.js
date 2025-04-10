@@ -5,7 +5,7 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 // Enhanced CORS configuration
 app.use(cors({
@@ -30,7 +30,7 @@ mongoose.connect(MONGODB_URI)
     .then(() => {
         console.log('Connected to MongoDB');
         // Start the server only after MongoDB connection is established
-        app.listen(PORT, () => {
+        app.listen(PORT, '0.0.0.0', () => {
             console.log('\n=== Server Started ===');
             console.log(`Server is running on port ${PORT}`);
             console.log('Access the web interface at:');
