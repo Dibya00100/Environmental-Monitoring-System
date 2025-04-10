@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://asusdibyajyoti:<db_password>@cluster0.6isyaus.mongodb.net/environmental_monitoring?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://asusdibyajyoti:M4-QF-jANcwtzNP@cluster0.6isyaus.mongodb.net/environmental_monitoring?retryWrites=true&w=majority';
 
 // Ensure the connection string starts with mongodb:// or mongodb+srv://
 if (!MONGODB_URI.startsWith('mongodb://') && !MONGODB_URI.startsWith('mongodb+srv://')) {
